@@ -8,15 +8,18 @@ public class DifficultyButton : MonoBehaviour
 {
     private Button button;
     private GameManager gameManager;
+
     public int difficulty;
 
     // Start is called before the first frame update
     void Start()
     {
         button = GetComponent<Button>();
+        button.onClick.AddListener(SetDifficulty);
+
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
-        button.onClick.AddListener(SetDifficulty);
+        
        
     }
 

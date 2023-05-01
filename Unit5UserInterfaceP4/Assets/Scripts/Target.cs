@@ -20,7 +20,7 @@ public class Target : MonoBehaviour
     void Start()
     {
         targetRb = GetComponent<Rigidbody>();
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
 
         targetRb.AddForce(RandomForce(), ForceMode.Impulse);
         targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);
@@ -57,8 +57,8 @@ public class Target : MonoBehaviour
         Destroy(gameObject); 
 
         if(!gameObject.CompareTag("Bad")) 
-        { 
-            gameManager.GameOver(); 
+        {
+            gameManager.UpdateLives(-1);
         }
     }
 
